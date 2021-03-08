@@ -9,6 +9,8 @@ import Sidebar from './Sidebar/Sidebar'
 import Native from './Examples/Native/Native'
 import TransitionGroup from './Examples/TransitionGroup/TransitionGroup'
 import ReactSpring from './Examples/ReactSpring/ReactSpring'
+import GreenSock from './Examples/GreenSock/GreenSock'
+import ThreeJs from './Examples/ThreeJs/ThreeJs'
 import './App.css';
 
 interface HashRouteProps extends RouteProps {
@@ -50,6 +52,12 @@ function App() {
           </HashRoute>
           <HashRoute hash="react-spring">
             <ReactSpring />
+          </HashRoute>
+          <HashRoute hash="greensock">
+            <GreenSock />
+          </HashRoute>
+          <HashRoute hash="threejs">
+            <ThreeJs />
           </HashRoute>
         </div>
       </div>

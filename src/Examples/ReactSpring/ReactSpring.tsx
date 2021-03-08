@@ -15,7 +15,7 @@ const ReactSpring = () => {
       duration: 300
     }
   })
-console.log('props', props)
+  console.log('props', props)
   return (
     <div className={style.ReactSpring}>
       <button onClick={() => openModal(!isModalOpen)}>Open Modal</button>
