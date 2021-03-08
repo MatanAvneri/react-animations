@@ -1,10 +1,10 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   RouteProps
 } from "react-router-dom";
+import { CSSTransition } from 'react-transition-group'
 import Sidebar from './Sidebar/Sidebar'
 import Native from './Examples/Native/Native'
 import TransitionGroup from './Examples/TransitionGroup/TransitionGroup'
@@ -14,16 +14,26 @@ interface HashRouteProps extends RouteProps {
   hash: string
 }
 
-const HashRoute: React.FC<HashRouteProps> = ({ hash, ...routeProps }) => (
-  <Route
-    render={({ location }) => {
-      console.log('location.hash === `#${hash}`', location.hash, hash, location.hash === `#${hash}`)
-      return (
-        (location.hash === `#${hash}`) && <Route {...routeProps} />
-      )
-    }}
-  />
-);
+const HashRoute: React.FC<HashRouteProps> = ({ hash, ...routeProps }) => {
+  return (
+    <Route
+      render={({ location }) => {
+        const shouldRender = location.hash === `#${hash}`
+
+        return <CSSTransition
+          in={shouldRender}
+          timeout={300}
+          classNames="page"
+          unmountOnExit
+        >
+          <div className="page">
+
+            { shouldRender && <Route {...routeProps} /> }
+          </div>
+        </CSSTransition>
+      }} />
+  )
+}
 
 function App() {
   return (
