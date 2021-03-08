@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Sidebar from './Sidebar/Sidebar'
 import Native from './Examples/Native/Native'
+import TransitionGroup from './Examples/TransitionGroup/TransitionGroup'
 import './App.css';
 
 interface HashRouteProps extends RouteProps {
@@ -15,9 +16,12 @@ interface HashRouteProps extends RouteProps {
 
 const HashRoute: React.FC<HashRouteProps> = ({ hash, ...routeProps }) => (
   <Route
-    render={({ location }) => (
-      (location.hash === `#${hash}`) && <Route {...routeProps} />
-    )}
+    render={({ location }) => {
+      console.log('location.hash === `#${hash}`', location.hash, hash, location.hash === `#${hash}`)
+      return (
+        (location.hash === `#${hash}`) && <Route {...routeProps} />
+      )
+    }}
   />
 );
 
@@ -27,11 +31,12 @@ function App() {
       <div className="App">
         <Sidebar />
         <div className="App__content">
-          <Switch>
-            <HashRoute hash="native">
-              <Native />
-            </HashRoute>
-          </Switch>
+          <HashRoute hash="native">
+            <Native />
+          </HashRoute>
+          <HashRoute hash="transition-group">
+            <TransitionGroup />
+          </HashRoute>
         </div>
       </div>
     </Router>
