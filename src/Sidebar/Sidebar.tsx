@@ -12,9 +12,7 @@ const Sidebar: React.FC = () => {
       <div className={style['nav-wrap']}>
         <nav className={style['main-nav']} role="navigation">
           <ul className={classnames(style['unstyled'], style['list-hover-slide'])}>
-            <li><Link to={{
-              hash: 'native'
-            }}>Native</Link></li>
+            <li><Link to='#native'>Native</Link></li>
             <li><Link to="#transition-group">Transition Group</Link></li>
             <li><Link to="#greensock">GreenSock</Link></li>
             <li><Link to="#threejs">Threejs</Link></li>
