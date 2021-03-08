@@ -2,22 +2,35 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  RouteProps
 } from "react-router-dom";
 import Sidebar from './Sidebar/Sidebar'
 import Native from './Examples/Native/Native'
 import './App.css';
 
+interface HashRouteProps extends RouteProps {
+  hash: string
+}
+
+const HashRoute: React.FC<HashRouteProps> = ({ hash, ...routeProps }) => (
+  <Route
+    render={({ location }) => (
+      (location.hash === `#${hash}`) && <Route {...routeProps} />
+    )}
+  />
+);
+
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename='react-animations'>
       <div className="App">
         <Sidebar />
         <div className="App__content">
           <Switch>
-            <Route path="/native">
+            <HashRoute hash="native">
               <Native />
-            </Route>
+            </HashRoute>
           </Switch>
         </div>
       </div>
