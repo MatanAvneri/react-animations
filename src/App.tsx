@@ -30,7 +30,6 @@ const HashRoute: React.FC<HashRouteProps> = ({ hash, ...routeProps }) => {
           unmountOnExit
         >
           <div className="page">
-
             { shouldRender && <Route {...routeProps} /> }
           </div>
         </CSSTransition>

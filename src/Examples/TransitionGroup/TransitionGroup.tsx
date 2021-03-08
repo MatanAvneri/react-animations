@@ -11,7 +11,7 @@ const TransitionGroup = () => {
   const [isTransitionGroup, checkTransitionGroup] = useState(true)
   return (
     <div className={style.TransitionGroup}>
-      <input id='transition-check' checked={isTransitionGroup} onClick={() => checkTransitionGroup(!isTransitionGroup)} type='checkbox' />
+      <input id='transition-check' checked={isTransitionGroup} onChange={() => checkTransitionGroup(!isTransitionGroup)} type='checkbox' />
       <label htmlFor='transition-check'>With Transition Group</label>
       <br />
       <button onClick={() => openModal(!isModalOpen)}>Open Modal</button>
