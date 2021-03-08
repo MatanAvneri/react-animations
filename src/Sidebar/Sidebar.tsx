@@ -11,10 +11,10 @@ const Sidebar: React.FC = () => {
       <div className={style['nav-wrap']}>
         <nav className={style['main-nav']} role="navigation">
           <ul className={classnames(style['unstyled'], style['list-hover-slide'])}>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="#">Native</a></li>
+            <li><a href="#">Transition Group</a></li>
+            <li><a href="#">GreenSock</a></li>
+            <li><a href="#">Threejs</a></li>
           </ul>
         </nav>
       </div>
