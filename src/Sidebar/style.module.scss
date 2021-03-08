@@ -7,13 +7,26 @@
   }
 }
 
+@keyframes swing {
+  10% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+}
+
 .sidebar {
   width: 17.5rem;
   background-image: linear-gradient(140deg, #030d2b, #0f47ff);
   color: white;
 
   h1 {
+    cursor: default;
     text-align: center;
+    &:hover {
+      animation: swing 2s infinite;
+    }
   }
 }
 
