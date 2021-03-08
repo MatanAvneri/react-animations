@@ -8,6 +8,7 @@ import { CSSTransition } from 'react-transition-group'
 import Sidebar from './Sidebar/Sidebar'
 import Native from './Examples/Native/Native'
 import TransitionGroup from './Examples/TransitionGroup/TransitionGroup'
+import ReactSpring from './Examples/ReactSpring/ReactSpring'
 import './App.css';
 
 interface HashRouteProps extends RouteProps {
@@ -46,6 +47,9 @@ function App() {
           </HashRoute>
           <HashRoute hash="transition-group">
             <TransitionGroup />
+          </HashRoute>
+          <HashRoute hash="react-spring">
+            <ReactSpring />
           </HashRoute>
         </div>
       </div>
