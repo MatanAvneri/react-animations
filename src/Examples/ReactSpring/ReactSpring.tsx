@@ -9,8 +9,8 @@ const Modal: React.FC = () => (
 const ReactSpring = () => {
   const [isModalOpen, openModal] = useState(false)
   const props = useSpring({
-    from: { height: 0, opacity: 0, transform: 'scale(0)' },
-    to: { height: isModalOpen ? 500 : 0, opacity: isModalOpen ? 1 : 0, transform: `scale(${isModalOpen ? 1 : 0})` },
+    from: { height: 0, opacity: 0, transform: 'scale(0);translateX(0)' },
+    to: { height: isModalOpen ? 90 : 0, opacity: isModalOpen ? 1 : 0, transform: `scale(${isModalOpen ? 1 : 0});translateX(0)` },
     config: {
       duration: 300
     }
@@ -20,10 +20,11 @@ console.log('props', props)
     <div className={style.ReactSpring}>
       <button onClick={() => openModal(!isModalOpen)}>Open Modal</button>
       <br />
-      <animated.div style={{ ...props, height: isModalOpen ? 'auto' : undefined }}
+      <animated.div style={{ ...props }}
       >
         <Modal />
       </animated.div>
+      bottom content
     </div>
   )
 }

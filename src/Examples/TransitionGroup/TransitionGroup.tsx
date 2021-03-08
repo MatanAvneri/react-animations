@@ -8,7 +8,7 @@ const Modal: React.FC = () => (
 
 const TransitionGroup = () => {
   const [isModalOpen, openModal] = useState(false)
-  const [isTransitionGroup, checkTransitionGroup] = useState(false)
+  const [isTransitionGroup, checkTransitionGroup] = useState(true)
   return (
     <div className={style.TransitionGroup}>
       <input id='transition-check' checked={isTransitionGroup} onClick={() => checkTransitionGroup(!isTransitionGroup)} type='checkbox' />
@@ -36,6 +36,8 @@ const TransitionGroup = () => {
           </CSSTransition>
         )
       }
+      <br/>
+      bottom content
     </div>
   )
 }
