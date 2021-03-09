@@ -17,12 +17,14 @@ const GreenSock: React.FC = () => {
       .to(circleRef.current, 1, { x: 500, y: 500, rotation: 0, borderRadius: 0, backgroundColor: 'blue' })
       .to(circleRef.current, 1, { x: 0, y: 500, rotation: 180, borderRadius: '100%', backgroundColor: 'red' })
       .to(circleRef.current, 1, { x: 0, y: 0, rotation: 0, borderRadius: 0, backgroundColor: 'blue' })
-      .play()
-      .repeat(-1)
   }, [])
 
   return (
-    <div ref={circleRef} className={style.GreenSock} />
+    <>
+      <button onClick={() => myTween.current.play().repeat(-1)}>Play</button>
+      <button onClick={() => myTween.current.pause()}>Pause</button>
+      <div ref={circleRef} className={style.GreenSock} />
+    </>
   )
 }
 
