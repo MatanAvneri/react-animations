@@ -11,32 +11,33 @@ const TransitionGroup = () => {
   const [isTransitionGroup, checkTransitionGroup] = useState(true)
   return (
     <div className={style.TransitionGroup}>
-      <input id='transition-check' checked={isTransitionGroup} onChange={() => checkTransitionGroup(!isTransitionGroup)} type='checkbox' />
-      <label htmlFor='transition-check'>With Transition Group</label>
+      <input
+        id="transition-check"
+        checked={isTransitionGroup}
+        onChange={() => checkTransitionGroup(!isTransitionGroup)}
+        type="checkbox"
+      />
+      <label htmlFor="transition-check">With Transition Group</label>
       <br />
       <button onClick={() => openModal(!isModalOpen)}>Open Modal</button>
       <br />
-      {
-        !isTransitionGroup && isModalOpen && <Modal />
-      }
-      {
-        isTransitionGroup && (
-          <CSSTransition
+      {!isTransitionGroup && isModalOpen && <Modal />}
+      {isTransitionGroup && (
+        <CSSTransition
           timeout={300}
-            in={isModalOpen}
-            classNames={{
-              enter: style['Modal--enter'],
-              enterActive: style['Modal--enter-active'],
-              exit: style['Modal--exit'],
-              exitActive: style['Modal--exit-active']
-            }}
-            unmountOnExit
-          >
-            <Modal />
-          </CSSTransition>
-        )
-      }
-      <br/>
+          in={isModalOpen}
+          classNames={{
+            enter: style['Modal--enter'],
+            enterActive: style['Modal--enter-active'],
+            exit: style['Modal--exit'],
+            exitActive: style['Modal--exit-active'],
+          }}
+          unmountOnExit
+        >
+          <Modal />
+        </CSSTransition>
+      )}
+      <br />
       bottom content
     </div>
   )
