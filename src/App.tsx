@@ -2,11 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, RouteProps } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
 import Sidebar from './Sidebar/Sidebar'
-import Native from './Examples/Native/Native'
-import TransitionGroup from './Examples/TransitionGroup/TransitionGroup'
-import ReactSpring from './Examples/ReactSpring/ReactSpring'
-import GreenSock from './Examples/GreenSock/GreenSock'
-import ThreeJs from './Examples/ThreeJs/ThreeJs'
+import locations from './locations'
 import './App.css'
 
 interface HashRouteProps extends RouteProps {
@@ -42,21 +38,15 @@ function App() {
       <div className="App">
         <Sidebar />
         <div className="App__content">
-          <HashRoute hash="native">
-            <Native />
-          </HashRoute>
-          <HashRoute hash="transition-group">
-            <TransitionGroup />
-          </HashRoute>
-          <HashRoute hash="react-spring">
-            <ReactSpring />
-          </HashRoute>
-          <HashRoute hash="greensock">
-            <GreenSock />
-          </HashRoute>
-          <HashRoute hash="threejs">
-            <ThreeJs />
-          </HashRoute>
+          {
+            locations.map(({ Component, path }) => {
+              return (
+                <HashRoute key={path} hash={path}>
+                  <Component />
+                </HashRoute>
+              )
+            })
+          }
         </div>
       </div>
     </Router>
