@@ -1,6 +1,7 @@
 import * as React from 'react'
 import classnames from 'classnames'
 import { Link } from 'react-router-dom'
+import locations from '../locations'
 import style from './style.module.scss'
 
 const Sidebar: React.FC = () => {
@@ -12,21 +13,13 @@ const Sidebar: React.FC = () => {
           <ul
             className={classnames(style['unstyled'], style['list-hover-slide'])}
           >
-            <li>
-              <Link to="#native">Native</Link>
-            </li>
-            <li>
-              <Link to="#transition-group">Transition Group</Link>
-            </li>
-            <li>
-              <Link to="#react-spring">React Spring</Link>
-            </li>
-            <li>
-              <Link to="#greensock">GreenSock</Link>
-            </li>
-            <li>
-              <Link to="#threejs">Threejs</Link>
-            </li>
+            {locations.map(({ nav, path }) => {
+              return (
+                <li key={nav}>
+                  <Link to={`#${path}`}>{nav}</Link>
+                </li>
+              )
+            })}
           </ul>
         </nav>
       </div>
