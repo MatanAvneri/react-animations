@@ -1,6 +1,10 @@
 import React, { createRef, useEffect, useRef } from 'react'
-import { TimelineLite } from 'gsap'
+import { gsap, TimelineLite } from 'gsap'
+import { PixiPlugin } from "gsap/PixiPlugin";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import style from './GreenSock.module.scss'
+
+gsap.registerPlugin(PixiPlugin, MotionPathPlugin);
 
 const GreenSock: React.FC = () => {
   const circleRef = createRef<HTMLDivElement>()
