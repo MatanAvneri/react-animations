@@ -38,15 +38,13 @@ function App() {
       <div className="App">
         <Sidebar />
         <div className="App__content">
-          {
-            locations.map(({ Component, path }) => {
-              return (
-                <HashRoute key={path} hash={path}>
-                  <Component />
-                </HashRoute>
-              )
-            })
-          }
+          {locations.map(({ Component, path }) => {
+            return (
+              <HashRoute key={path} hash={path}>
+                <Component />
+              </HashRoute>
+            )
+          })}
         </div>
       </div>
     </Router>

@@ -3,31 +3,31 @@ import TransitionGroup from './Examples/TransitionGroup/TransitionGroup'
 import ReactSpring from './Examples/ReactSpring/ReactSpring'
 import GreenSock from './Examples/GreenSock/GreenSock'
 import ThreeJs from './Examples/ThreeJs/ThreeJs'
-const locations: { nav: string; path: string, Component: React.FC }[] = [
+const locations: { nav: string; path: string; Component: React.FC }[] = [
   {
     nav: 'Native',
     path: 'native',
-    Component: Native
+    Component: Native,
   },
   {
     nav: 'Transition Group',
     path: 'transition-group',
-    Component: TransitionGroup
+    Component: TransitionGroup,
   },
   {
     nav: 'React Spring',
     path: 'react-spring',
-    Component: ReactSpring
+    Component: ReactSpring,
   },
   {
     nav: 'GreenSock',
     path: 'greensock',
-    Component: GreenSock
+    Component: GreenSock,
   },
   {
     nav: 'Threejs',
     path: 'threejs',
-    Component: ThreeJs
+    Component: ThreeJs,
   },
 ]
 export default locations

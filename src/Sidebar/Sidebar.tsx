@@ -1,10 +1,11 @@
 import * as React from 'react'
 import classnames from 'classnames'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import locations from '../locations'
 import style from './style.module.scss'
 
 const Sidebar: React.FC = () => {
+  const location = useLocation()
   return (
     <header className={style.sidebar} role="banner">
       <h1>React Animations</h1>
@@ -16,7 +17,12 @@ const Sidebar: React.FC = () => {
             {locations.map(({ nav, path }) => {
               return (
                 <li key={nav}>
-                  <Link to={`#${path}`}>{nav}</Link>
+                  <Link
+                    data-selected={`#${path}` === location.hash}
+                    to={`#${path}`}
+                  >
+                    {nav}
+                  </Link>
                 </li>
               )
             })}
