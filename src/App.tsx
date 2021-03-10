@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, RouteProps } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
 import Sidebar from './Sidebar/Sidebar'
+import Welcome from './Welcome/Welcome'
 import locations from './locations'
 import './App.css'
 
@@ -45,6 +46,12 @@ function App() {
               </HashRoute>
             )
           })}
+          <Route
+            render={({ location }) => {
+              const shouldRender = location.hash === ''
+              return shouldRender && <Welcome />
+            }}
+          />
         </div>
       </div>
     </Router>

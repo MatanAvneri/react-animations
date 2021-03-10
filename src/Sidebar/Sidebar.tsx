@@ -8,7 +8,9 @@ const Sidebar: React.FC = () => {
   const location = useLocation()
   return (
     <header className={style.sidebar} role="banner">
-      <h1>React Animations</h1>
+      <Link to="/">
+        <h1>React Animations</h1>
+      </Link>
       <div className={style['nav-wrap']}>
         <nav className={style['main-nav']} role="navigation">
           <ul
