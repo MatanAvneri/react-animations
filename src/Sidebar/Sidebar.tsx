@@ -16,9 +16,9 @@ const Sidebar: React.FC = () => {
           <ul
             className={classnames(style['unstyled'], style['list-hover-slide'])}
           >
-            {locations.map(({ nav, path }) => {
+            {locations.map(({ nav, path, link }) => {
               return (
-                <li key={nav}>
+                <li key={nav} onDoubleClick={() => window.open(link, '_blank')}>
                   <Link
                     data-selected={`#${path}` === location.hash}
                     to={`#${path}`}
