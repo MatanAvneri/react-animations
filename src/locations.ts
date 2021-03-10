@@ -3,6 +3,7 @@ import TransitionGroup from './Examples/TransitionGroup/TransitionGroup'
 import ReactSpring from './Examples/ReactSpring/ReactSpring'
 import GreenSock from './Examples/GreenSock/GreenSock'
 import ThreeJs from './Examples/ThreeJs/ThreeJs'
+import Lottie from './Examples/Lottie/Lottie'
 const locations: { nav: string; path: string; Component: React.FC }[] = [
   {
     nav: 'Native',
@@ -23,6 +24,11 @@ const locations: { nav: string; path: string; Component: React.FC }[] = [
     nav: 'GreenSock',
     path: 'greensock',
     Component: GreenSock,
+  },
+  {
+    nav: 'Lottie',
+    path: 'lottie',
+    Component: Lottie,
   },
   {
     nav: 'Threejs',
