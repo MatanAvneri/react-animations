@@ -22,7 +22,7 @@ const GreenSock: React.FC = () => {
         rotation: 0,
         borderRadius: 0,
         backgroundColor: 'blue',
-        ease: 'linear'
+        ease: 'linear',
       })
       .to(circleRef.current, 4, {
         x: width - 100,
@@ -30,7 +30,7 @@ const GreenSock: React.FC = () => {
         rotation: 180,
         borderRadius: '100%',
         backgroundColor: 'red',
-        ease: 'linear'
+        ease: 'linear',
       })
       .to(circleRef.current, 4, {
         x: width - 100,
@@ -38,7 +38,7 @@ const GreenSock: React.FC = () => {
         rotation: 0,
         borderRadius: 0,
         backgroundColor: 'blue',
-        ease: 'linear'
+        ease: 'linear',
       })
       .to(circleRef.current, 4, {
         x: 0,
@@ -46,7 +46,7 @@ const GreenSock: React.FC = () => {
         rotation: 180,
         borderRadius: '100%',
         backgroundColor: 'red',
-        ease: 'linear'
+        ease: 'linear',
       })
       .to(circleRef.current, 4, {
         x: 0,
@@ -54,7 +54,7 @@ const GreenSock: React.FC = () => {
         rotation: 0,
         borderRadius: 0,
         backgroundColor: 'blue',
-        ease: 'linear'
+        ease: 'linear',
       })
   }, [width, height])
 

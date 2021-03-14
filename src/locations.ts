@@ -4,11 +4,12 @@ import ReactSpring from './Examples/ReactSpring/ReactSpring'
 import GreenSock from './Examples/GreenSock/GreenSock'
 import ThreeJs from './Examples/ThreeJs/ThreeJs'
 import Lottie from './Examples/Lottie/Lottie'
+import FramerMotion from './Examples/FramerMotion/FramerMotion'
 const locations: {
   nav: string
   path: string
   Component: React.FC
-  link?: string
+  link: string
 }[] = [
   {
     nav: 'Native',
@@ -27,6 +28,12 @@ const locations: {
     path: 'react-spring',
     Component: ReactSpring,
     link: 'https://www.react-spring.io/',
+  },
+  {
+    nav: 'Framer Motion',
+    path: 'framer-motion',
+    Component: FramerMotion,
+    link: 'https://github.com/framer/motion',
   },
   {
     nav: 'GreenSock',

@@ -1,0 +1,13 @@
+.FramerMotion {
+  padding: 2rem 5rem;
+
+  &__modal {
+    border-radius: 6px;
+    background: white;
+    display: inline-block;
+    padding: 2rem 5rem;
+    min-height: 82px;
+    height: 100%;
+    box-shadow: 0 1px 9px 0 rgba(0, 0, 0, 0.35);
+  }
+}
