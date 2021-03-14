@@ -22,34 +22,39 @@ const GreenSock: React.FC = () => {
         rotation: 0,
         borderRadius: 0,
         backgroundColor: 'blue',
+        ease: 'linear'
       })
-      .to(circleRef.current, 1, {
+      .to(circleRef.current, 4, {
         x: width - 100,
         y: 0,
         rotation: 180,
         borderRadius: '100%',
         backgroundColor: 'red',
+        ease: 'linear'
       })
-      .to(circleRef.current, 1, {
+      .to(circleRef.current, 4, {
         x: width - 100,
         y: height - 100,
         rotation: 0,
         borderRadius: 0,
         backgroundColor: 'blue',
+        ease: 'linear'
       })
-      .to(circleRef.current, 1, {
+      .to(circleRef.current, 4, {
         x: 0,
         y: height - 100,
         rotation: 180,
         borderRadius: '100%',
         backgroundColor: 'red',
+        ease: 'linear'
       })
-      .to(circleRef.current, 1, {
+      .to(circleRef.current, 4, {
         x: 0,
         y: 0,
         rotation: 0,
         borderRadius: 0,
         backgroundColor: 'blue',
+        ease: 'linear'
       })
   }, [width, height])
 
