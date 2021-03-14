@@ -1,5 +1,9 @@
 .FramerMotion {
+  margin: 2rem 5rem;
   padding: 2rem 5rem;
+  height: 50%;
+  width: 50%;
+  border: 1px darkblue dashed;
 
   &__modal {
     border-radius: 6px;
